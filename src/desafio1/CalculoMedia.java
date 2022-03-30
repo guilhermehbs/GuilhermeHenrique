@@ -1,33 +1,36 @@
 package desafio1;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public abstract class CalculoMedia {
 	
-	private int contador = 0;
-	private int soma = 0;
-	private float media;
-	private int totalDeNumeros;
+	private static int contador = 0;
+	protected static float soma = 0;
+	protected static float media;
+	protected static float totalDeNumeros;
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		
-		//teste
+		ArrayList<Integer> list = Entrada.main(args);
+		
+		//list.stream().forEach(System.out::println);
 			
 		for (float lista : list) {
 			contador++;
 			totalDeNumeros = contador;
 		}
 		
-		System.out.println("Contador: " + contador);
-		
 		for (int i = 0; i < list.size(); i++) {
-			System.out.println("Número:" + list.get(i));
 			soma += list.get(i);
 		}
 		
 		media = soma/totalDeNumeros;
+		System.out.println("Média: " + media);
+		
 	}
-	public static int getSoma() {
+
+	public static float getSoma() {
 		return soma;
 	}
 
@@ -35,7 +38,12 @@ public abstract class CalculoMedia {
 		return media;
 	}
 
-	public static int getTotalDeNumeros() {
+	public static float getTotalDeNumeros() {
 		return totalDeNumeros;
 	}
+
+	public boolean esreverTexto(String Caminho, String Texto) {
+		return false;
+	}
+	
 }

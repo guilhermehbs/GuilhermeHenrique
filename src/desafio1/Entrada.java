@@ -7,7 +7,7 @@ public class Entrada {
 	
 	static int list;
 	
-	public static void main(String[] args) {
+	public static ArrayList<Integer> main(String[] args) {
 		//Declara variável leitura como vazia:
 		String leitura = "";
 		
@@ -39,8 +39,8 @@ public class Entrada {
 		
 		//Imprime os números digitados:
 		System.out.println("Números digitados: " + list);
-		System.out.println("Média: " + list);
 		scan.close();
+		return list;
 	}
 		
 }

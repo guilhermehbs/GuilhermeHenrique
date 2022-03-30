@@ -1,5 +1,9 @@
 package desafio1;
 
-public class SaidaExcel {
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+public class SaidaExcel extends CalculoMedia implements EscreverArquivos {
 
 }
