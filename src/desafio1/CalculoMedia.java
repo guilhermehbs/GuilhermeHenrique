@@ -6,9 +6,9 @@ import java.util.ArrayList;
 public abstract class CalculoMedia {
 	
 	private static int contador = 0;
-	protected static float soma = 0;
-	protected static float media;
-	protected static float totalDeNumeros;
+	private static float soma = 0;
+	private static float media;
+	private static float totalDeNumeros;
 	
 	public static void main(String[] args) throws IOException {
 		
@@ -25,9 +25,25 @@ public abstract class CalculoMedia {
 			soma += list.get(i);
 		}
 		
-		media = soma/totalDeNumeros;
+		setMedia(soma/totalDeNumeros);
 		System.out.println("Média: " + media);
 		
+	}
+
+	public static void setContador(int contador) {
+		CalculoMedia.contador = contador;
+	}
+
+	public static void setSoma(float soma) {
+		CalculoMedia.soma = soma;
+	}
+
+	public static void setMedia(float media) {
+		CalculoMedia.media = media;
+	}
+
+	public static void setTotalDeNumeros(float totalDeNumeros) {
+		CalculoMedia.totalDeNumeros = totalDeNumeros;
 	}
 
 	public static float getSoma() {

@@ -6,4 +6,7 @@ import java.io.PrintWriter;
 
 public class SaidaExcel extends CalculoMedia implements EscreverArquivos {
 
+	public void escreverTexto()throws IOException{
+		
+	}
 }

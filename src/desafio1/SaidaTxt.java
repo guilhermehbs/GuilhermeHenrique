@@ -1,33 +1,25 @@
 
 package desafio1;
 
-import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 
-	public class SaidaTxt extends CalculoMedia implements EscreverArquivos {
+public class SaidaTxt extends CalculoMedia implements EscreverArquivos {
 
-		@Override
-		public void ecreverValor() {
-			float mediaTxt = getSoma()/getTotalDeNumeros();
+	@Override
+		public void escreverTexto() {
+			try(
+				FileWriter escreverArquivo = new FileWriter("saida.txt");
+				PrintWriter gravarArquivo = new PrintWriter(escreverArquivo);
+					
+				){
+				
+				gravarArquivo.println(CalculoMedia.getMedia());
+				escreverArquivo.close();
+				
+			}catch(IOException e) {
+				e.printStackTrace();
+			}
 		}
-		
-		public static void main(String[] args) throws IOException {
-			
-			ArrayList<Integer> list = Entrada.main(args);
-			
-			FileWriter arquivo = new FileWriter("c:\\desafio1\\Saida.txt");
-		    PrintWriter gravarArquivo = new PrintWriter(arquivo);
-		    
-		    gravarArquivo.printf("Números digitados: " + list);
-	
-		    media = soma/totalDeNumeros;
-			gravarArquivo.printf("Média: " + media);
-		    
-			System.out.println("Média: " + media);
-		    System.out.println("Arquivo TXT salvo em: c:\\\\desafio1\\\\Saida.txt ");
-		    
-		    arquivo.close();
-		}	   
 }

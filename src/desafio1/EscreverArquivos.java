@@ -1,7 +1,9 @@
 package desafio1;
 
+import java.io.IOException;
+
 public interface EscreverArquivos {
 	
-	public void ecreverValor();
+	public void escreverTexto()throws IOException;
 	
 }
